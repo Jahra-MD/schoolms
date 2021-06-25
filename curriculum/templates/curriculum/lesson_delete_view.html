@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<h3>Are u sure you want to delete ?</h3>
+<form method ="post">
+    {% csrf_token %}
+    <input type ="submit" name ="" value="delete">
+    <a href="{% url 'curriculum:lesson_detail' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}" class="btn btn-danger btn-block">Cancel delete</a>
+</form>
+
+{% endblock %}

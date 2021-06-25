@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<p>Created on {{lessons.created_at}} by {{lessons.created_by}}</p>
+ <a href="{% url 'curriculum:lesson_update' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}">Update lesson</a>
+<a href="{% url 'curriculum:lesson_delete' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}">Delete lesson</a>
+
+<h4>post your comment or question below:</h4>
+ <form method="post">
+  <div class="form-group">
+    {% csrf_token %}
+    {{form|crispy}}
+   <input type="submit" name="form" value="Add comment" class="btn btn-primary btn-sm">
+    </div>
+    </form>
+
+    {%  for  comment in lessons.comments.all  %}
+       <h4>{{comment.author}}  <small><i>Posted on {{comment.date_added}}</i></small></h4>
+       <p>{{comment.body}}</p>
+       {% for reply in comment.replies.all %}
+          <h5>{{reply.author}} <small><i>Posted on {{reply.date_added}}</i></small></h5>                                                                                                                                                                                                               <h5>{{reply.author}} <small><i>Posted on {{reply.date_added}}</i></small></h5>
+          <p>{{reply.reply_body}}</p>
+       {% endfor %}
+     <!--form to post reply-->
+    <form method="post">
+       <input type="hidden" name="comment.id" value="{{comment.id}}">
+       <input type="hidden" names="comment.comm_name" value="{{comment.comm_name}}">
+       {% csrf_token %}
+       {{form2|crispy}}
+       <input type="submit" name="form2" value="Add reply" class="btn btn-warning btn-sm">
+   </form>
+{% endfor %}
+
+{% endblock %}
