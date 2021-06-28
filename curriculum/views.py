@@ -115,3 +115,17 @@ class LessonDeleteView(DeleteView):
         standard =self.object.Standard
         subject =self.object.subject
         return reverse_lazy('curriculum:lesson_list',kwargs ={'standard':Standard.slug, 'slug':subject.slug})
+
+def CCA(request):
+    registered =False
+    if request.method =="POST":
+        cca_form =CCAProfileInfoform(data=request.POST)
+
+        if cca_form.is_valid():
+            program =cca_form.save(commit=False)
+            program.save()
+            registered=True
+        else:
+             print(cca_form.errors)
+    else:
+        cca_form =CCAProfileInfoform()

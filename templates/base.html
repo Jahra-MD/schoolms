@@ -37,11 +37,14 @@
                       <li class="nav-item ">
                          <a class="nav-link" href="{% url 'admin:index' %}" style="color:#f53f08;"><strong>Admin</strong></span> </a>
                       </li>
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="{% url 'CCA' %}" style="color:#f53f08;"><strong>Register CCA</strong></a>
+                       </li>
                       {%endif%}
                       {% if user.is_authenticated %}
-                          <li class="nav-item  ">
-                           <a class="nav-link" href="{% url 'user_logout' %}" style="color:#f53f08;"><strong>Logout</strong></a>
-                          </li>
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="{% url 'user_logout' %}" style="color:#f53f08;"><strong>logout</strong></a>
+                      </li>
                       {% else %}
                           <li class="nav-item ">
                               <a class="nav-link" href="{% url 'user_login' %}" style="color:#f53f08;"><strong>Login</strong></a>
@@ -54,7 +57,7 @@
             </div>
       </div>
     </nav>
-
+    
       <header>
         <div id="intro" class="container-fluid d-flex align-items-center justify-content-center h-100">
           <div class="row d-flex justify-content-center text-center">
@@ -69,9 +72,9 @@
       </div>
     </div>
   </header>
-    {% block content %}
+  {% block content %}
 
-    {% endblock %}
+  {% endblock %}
 
        <footer class="page-footer " style ="background-color:#f7d5f4;">
       <div class="container">

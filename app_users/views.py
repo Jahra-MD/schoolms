@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from app_users.forms import UserForm ,UserProfileInfoForm
+from app_users.forms import UserForm ,UserProfileInfoForm,CCAProfileInfoform
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -88,3 +88,20 @@ def register(request):
                             {'registered':registered,
                              'user_form':user_form,
                              'profile_form':profile_form})
+
+def CCA(request):
+    registered =False
+    if request.method =="POST":
+        cca_form =CCAProfileInfoform(data=request.POST)
+
+        if cca_form.is_valid():
+            program =cca_form.save(commit=False)
+            program.save()
+            registered=True
+        else:
+             print(cca_form.errors)
+    else:
+        cca_form =CCAProfileInfoform()
+    return render(request, 'app_users/CCA.html',
+                            {'registered':registered,
+                             'cca_form':cca_form})

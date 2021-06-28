@@ -9,6 +9,10 @@ def path_and_rename(instance, filename):
     if instance.pk:
         filename = 'User_Profile_Pictures/{}.{}'.format(instance.pk, ext)
     return os.path.join(upload_to, filename)
+    if instance.cca_pic:
+        filename = 'CCA_Profile_Pictures/{}.{}'.format(instance.cca_pic,ext)
+    return os.path.join(upload_to, filename)
+
 
 class UserProfileInfo(models.Model):
 
@@ -30,3 +34,10 @@ class UserProfileInfo(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class CCAProfileInfo( models.Model):
+    name = models.CharField(max_length=250)
+    des =models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    cca_pic =models.ImageField(upload_to =path_and_rename,verbose_name='poster',blank=True)
+
