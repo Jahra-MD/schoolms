@@ -5,3 +5,4 @@ admin.site.register(UserProfileInfo)
 admin.site.register(CCAProfileInfo)
 
 
+
