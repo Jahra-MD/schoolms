@@ -4,6 +4,10 @@ from app_users.forms import UserForm ,UserProfileInfoForm,CCAProfileInfoform
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import DetailView,TemplateView,ListView
+from .models import  CCAProfileInfo
+from django.urls import reverse_lazy
+
 
 def index( request):
     return render(request, 'base.html')
