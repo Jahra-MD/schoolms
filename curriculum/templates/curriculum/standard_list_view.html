@@ -47,7 +47,7 @@
                             <h4 class="card-title" style="color:#ff5722;">{{standard.name}}</h4>
                             <p class="card-text">{{standard.description|truncatechars:75}}</p>
                             {% if user.is_authenticated %}
-                            <a href="{% url 'curriculum:subject_list' slug=standard.slug %}" class="btn btn-primary" style="background-color:#b2d5f1;">Lets get started</a>
+                            <a href="{% url 'curriculum:subject_list' slug=standard.slug %}" class="btn btn-primary" style="background-color:#00bcd4;">Lets get started</a>
                             {%else%}
                             <p>Register or login to start learning</p>
                             <a href="{% url 'user_login' %}" class="btn btn-std" style="background-color:#00bcd4;">Login</a>

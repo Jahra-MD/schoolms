@@ -4,9 +4,7 @@ from app_users.forms import UserForm ,UserProfileInfoForm,CCAProfileInfoform
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.views.generic import DetailView,TemplateView,ListView
 from .models import  CCAProfileInfo
-from django.urls import reverse_lazy
 
 
 def index( request):
@@ -109,3 +107,8 @@ def CCA(request):
     return render(request, 'app_users/CCA.html',
                             {'registered':registered,
                              'cca_form':cca_form})
+
+def display(request):
+    picture = CCAProfileInfo.objects.all
+    context={'picture':picture}
+    return render(request,'app_users/cca_display.html',context)

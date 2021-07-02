@@ -33,9 +33,9 @@ class UserProfileInfoForm(forms.ModelForm):
         fields = ('bio', 'profile_pic', 'user_type')
 
 class CCAProfileInfoform(forms.ModelForm):
+    name =forms.CharField(required=True)
     des =forms.CharField(required=True)
-   
     class Meta():
         model = CCAProfileInfo
-        fields=('des','cca_pic','name') 
+        fields=('name','des','cca_pic') 
     

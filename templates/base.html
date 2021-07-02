@@ -42,7 +42,9 @@
                        </li>
                       {%endif%}
                       {% if user.is_authenticated %}
-                    
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="{% url 'CCADisplay' %}" style="color:#f53f08;"><strong>CCA</strong></a>
+                       </li>
                       <li class="nav-item  ">
                         <a class="nav-link" href="{% url 'user_logout' %}" style="color:#f53f08;"><strong>logout</strong></a>
                       </li>
