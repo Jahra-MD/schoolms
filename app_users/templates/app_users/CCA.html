@@ -28,23 +28,40 @@
 
 {% block content %}
 
-<section class="text-center mt-4">
-              <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">CO-CURRICULAR ACTIVITIES</h2>
-              
-              {% if registered %}
-              <h1>PROGRAM IS REGISTERED</h1>
-              {%else%}
-               <h3>Fill the form:</h3>
-             <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{cca_form|crispy}}
-                <div class="row d-flex justify-content-center">
-                   <div class="col-md-6">
-                   <input type="submit" value="Register" class="btn btn-primary btn-block">
+
+<section class="text-center mt-4" style="background-color: aliceblue;">
+  <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">CO-CURRICULAR ACTIVITIES</h2>
+  
+  {% if registered %}
+  <h4>PROGRAM IS REGISTERED</h4>
+  {%else%}
+   <form method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="csrfmiddlewaretoken" value="uedsVtYUqJGyIDL1ubqjZQrWOvHflzkRS5YLZX4IerPXKedRbxSqvRGWgRrH2JSK">
+    
+
+<div id="div_id_name" class="form-group"> <label for="id_name" class=" requiredField">
+                <strong>Name</strong><span class="asteriskField">*</span> </label> 
+                <div class=""> 
+                  <input type="text" name="name" class="textinput textInput form-control" required="" id="id_name" style="margin-left:40%; width:326px;">
                  </div>
+                 </div> 
+                 <div id="div_id_des" class="form-group"> <label for="id_des" class=" requiredField">
+                  <strong>Description</strong><span class="asteriskField">*</span> </label> 
+                <div class=""> <input type="text" name="des" class="textinput textInput form-control" required="" id="id_des" style="margin-left:40%; width:326px; height:150px;"> 
                 </div>
-          </form>
-        </div>
+               </div> 
+               <div id="div_id_cca_pic" class="form-group"> <label for="id_cca_pic" class="">
+                <strong>Poster</strong>
+            </label> <div class=""> <input type="file" name="cca_pic" accept="image/*" class="clearablefileinput form-control-file" id="id_cca_pic" style="margin-left: 170px;">
+             </div>
+             </div>
+    <div class="row d-flex justify-content-center">
+       <div class="col-md-6">
+       <input type="submit" value="Register" class="btn btn-primary btn-block" style="margin-left:4.5%; width:200px; margin-bottom: 20px;margin-top:20px; background:rgb(240, 114, 213)">
+     </div>
+    </div>
+</form>
+</div>
 
 {% endif %}        
 </section>
