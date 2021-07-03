@@ -28,7 +28,7 @@
 
 {% block content %}
 
-<section class="text-center mt-4">
+<section class="text-center mt-4" style="background-color: rgb(224, 250, 225);">
               <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Login To Explore</h2>
               <!-- class row for description-->
               <div class="row d-flex justify-content-center mb-4">
@@ -43,11 +43,11 @@
                   {% csrf_token %}
                   <div class="col-md-12">
                     <div class="row">
-                  <label for="username">Username:</label>
+                  <label for="username"><strong>Username</strong></label>
                   <input type="text" name="username" placeholder="Username" class="form-control" style="margin-left:40%; width:326px">
 
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" class="form-control" style="margin-left:40%; width:326px">
+                  <label for="password"> <strong>Password</strong></label>
+                  <input type="password" name="password"  placeholder="password" class="form-control" style="margin-left:40%; width:326px">
                   </div>
                   <div class="row justify-content-center">
                       <input type="submit" value="Login" class="btn btn-success btn-lg mt-3" style="margin-left:4.5%; width:200px; margin-bottom: 20px;">

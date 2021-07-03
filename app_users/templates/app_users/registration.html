@@ -29,9 +29,10 @@ Register
 {% endblock %}
 
 {% block content %}
+<div style="background-color: rgb(224, 250, 225);">
 <div>
 <section class="text-center mt-4">
-              <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Login To Explore</h2>
+              <h2 class="mb-5 font-weight-bold" style="color:#ff5722; padding-top:20px;">Login To Explore</h2>
               <!-- class row for description-->
               <div class="row d-flex justify-content-center mb-4">
                 <!-- class column -->
@@ -42,45 +43,45 @@ Register
               <div class="row d-flex justify-content-center mb-4">
                 </div>
 </section>
-               
+              
                 {% if registered %}
                 <h1>Thanks for registering</h1>
                 {%else%}
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data" style="margin-left: 80px; margin-right:250px;">
                   <input type="hidden" name="csrfmiddlewaretoken" value="lzySw098EgeKI63VSRKQ7iCVMiCO9fUUJqjbAufWsYn9KHvLzdcXDjRVeEmgQpsN">
                   
 <div id="div_id_username" class="form-group">
    <label for="id_username" class=" requiredField">
-                Username<span class="asteriskField">*</span>
+                <strong>Username</strong><span class="asteriskField">*</span>
                </label>
                 <div class="">
-                   <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_username" style="margin-left:40px; width:400px;"> <small id="hint_id_username" 
+                   <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_username"> <small id="hint_id_username" 
                    class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small> 
                   </div> 
                 </div> 
                 <div id="div_id_first_name" class="form-group"> <label for="id_first_name" class="">
-                First name
+                <strong>First Name</strong>
             </label> 
             <div class=""> 
               <input type="text" name="first_name" maxlength="150" class="textinput textInput form-control" id="id_first_name"> 
             </div> 
           </div>
            <div id="div_id_last_name" class="form-group"> <label for="id_last_name" class="">
-                Last name
+              <strong>Last name</strong>
             </label> 
             <div class=""> <input type="text" name="last_name" maxlength="150" class="textinput textInput form-control" id="id_last_name"> </div>
            </div> 
            <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
-                Email<span class="asteriskField">*</span> </label> 
+                <strong>Email</strong><span class="asteriskField">*</span> </label> 
                 <div class=""> <input type="email" name="email" class="emailinput form-control" required="" id="id_email">
                  </div> 
                 </div> 
                 <div id="div_id_password1" class="form-group">
                   
                   <label for="id_password1" class=" requiredField">
-                Password<span class="asteriskField">*</span> </label> 
+                <strong>Password</strong><span class="asteriskField">*</span> </label> 
                 <div class=""> <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password1"> <small id="hint_id_password1" class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
-                Password confirmation<span class="asteriskField">*</span> 
+                  <strong>Confirm Password</strong><span class="asteriskField">*</span> 
               </label> <div class=""> 
                 <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password2"> 
                 <small id="hint_id_password2" class="form-text text-muted">Enter the same password as before, for verification.</small>
@@ -90,32 +91,32 @@ Register
                   
 
 <div id="div_id_bio" class="form-group"> <label for="id_bio" class="">
-                Bio
+                <strong>Bio</strong>
             </label>
              <div class=""> <input type="text" name="bio" class="textinput textInput form-control" id="id_bio"> 
             </div>
            </div> 
            <div id="div_id_profile_pic" class="form-group"> <label for="id_profile_pic" class="">
-                Profile Picture
+            <strong>Profile picture</strong>
             </label>
              <div class=""> 
                <input type="file" name="profile_pic" accept="image/*" class="clearablefileinput form-control-file" id="id_profile_pic">
                </div>
                </div>
                 <div id="div_id_user_type" class="form-group"> <label for="id_user_type" class=" requiredField">
-                User type<span class="asteriskField">*</span> </label> <div class=""> <select name="user_type" class="select form-control" id="id_user_type"> <option value="student">student</option> <option value="parent">parent</option>
+                <strong>User type</strong><span class="asteriskField">*</span> </label> <div class=""> <select name="user_type" class="select form-control" id="id_user_type"> <option value="student">student</option> <option value="parent">parent</option>
 
 </select> 
 </div>
  </div>
 
-                  <div class="row d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center"  style="padding-top: 20px;">
                      <div class="col-md-6">
                      <input type="submit" value="Register" class="btn btn-primary btn-block">
                    </div>
                   </div>
             </form>
-
+          </div>
 
             {% endif %}        
           {%endblock%}

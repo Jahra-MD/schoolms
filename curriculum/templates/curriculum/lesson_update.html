@@ -30,7 +30,7 @@
 
 {% block content %}
 
-<section id="best-features" class="text-center">
+<section id="best-features" class="text-center" style="margin-top: 30px;">
               <h2 class="mb-5 font-weight-bold" style="color:#ff5722;"> Update {{lessons.name}}</h2>
               <!-- class row for description-->
               <div class="row d-flex justify-content-center mb-4">
@@ -42,10 +42,10 @@
 </section>
 
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" style="margin-left: 40px; padding-right: 120px;">
   {% csrf_token %}
   {{form|crispy}}
-  <div class="row">
+  <div class="row" style="margin-top: 25px;">
         <div class="col-md-4 mb-3 mr-3">
                 <input type="submit" value="Update" class="btn btn-warning btn-block">
         </div>

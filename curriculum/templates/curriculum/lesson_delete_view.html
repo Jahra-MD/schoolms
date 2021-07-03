@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Lesson Delete {% endblock %}
+{% block title %} Lesson Delete {% endblock %}
 
 {% block image_block %}
 <header class="info-header">
@@ -31,7 +31,7 @@
 {% block content %}
 
 <section id="best-features" class="text-center">
-              <h2 class="mb-5 font-weight-bold" style="color:#0e31ce;">Delete {{lessons.name}}</h2>
+              <h2 class="mb-5 font-weight-bold" style="color:#0e31ce; margin-top: 40px;">Delete {{lessons.name}}</h2>
               <!-- class row for description-->
               <div class="row d-flex justify-content-center mb-4">
                 <!-- class column -->
@@ -41,11 +41,11 @@
               </div>
 </section>
 
-<h3 class="mb-4" style="color:#ff5722;">Are you sure you want to delete {{lessons.name}} chapter?</h3>
+<h3 class="mb-4" style="color:#ff5722; margin-left: 100px;">Are you sure you want to delete {{lessons.name}} chapter?</h3>
 
 <form method="post">
   {% csrf_token %}
-  <div class="row">
+  <div class="row" style="margin-left: 150px;">
         <div class="col-md-4 mb-3 mr-3">
                 <input type="submit" value="Delete" class="btn btn-danger btn-block">
         </div>
