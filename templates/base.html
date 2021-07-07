@@ -93,18 +93,28 @@
             </div>
           </section>
       <header>
-        <div id="intro" class="container-fluid d-flex align-items-center justify-content-center h-100">
-          <div class="row d-flex justify-content-center text-center">
-              <div class="col-md-10 ">        
-          <h3 class="display-4 white-text p-5 mb-2" style="color: #ff5722; text-align:center; width:250px"><strong>Start Learning</strong></h3>
-         <!-- divider -->
-         <hr style="color: #ff5722;">
-         <!-- description -->
-         <a href="{% url 'curriculum:standard_list' %}"><button type="button" class="btn" style="color: #ff5722;">Start Now</Button></a>
-        
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:800px; height:460px;">
+          <div class="carousel-inner" style="margin-left: 30px; width:1200px;height:450px;">
+            <div class="carousel-item active">
+              <img src="https://pedagoo.com/wp-content/uploads/2020/06/2250x1500_czy-warto-korzystac-ze-szkolen-online-ollh.jpg" class="d-block w-100" alt="img1">
+            </div>
+            <div class="carousel-item">
+              <img src="https://teachonline.ca/sites/default/files/tools-trends/banner/new-pedagogy-1140x400.jpg" class="d-block w-100" alt="img2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://blog.pearsoninternationalschools.com/wp-content/uploads/2021/03/GettyImages-1270930604_1800x900.jpg" class="d-block w-100" alt="img3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="
+          left: 1120px;">
+            <span class="carousel-control-next-icon"  aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-      </div>
-    </div>
       </header>
       {% block content %}
 

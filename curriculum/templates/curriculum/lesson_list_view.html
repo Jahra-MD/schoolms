@@ -30,17 +30,11 @@
 
 
 {% block content %}
-<div  style="background-color: rgb(195, 146, 221);"></div>
+<div  style="background-color: rgb(201, 235, 243);">
 <section id="best-features" class="text-center">
               <h2 class="mb-5 mt-5 font-weight-bold" style="color:#ff5722;">Let us Dive Deeper</h2>
-              <!-- class row for description-->
-              <div class="row d-flex justify-content-center mb-4">
-                <!-- class column -->
-                <div class="col-md-8 mb-5">
                   <p class="white-text my-4">Let us make our day bright by learning something new today.</p>
-                </div>
-              </div>
-              <!-- class row2 for cards -->
+               
               <div class="row">
                 {% for lesson in subjects.lessons.all %}
                 <div class="col-md-4 d-flex mb-5 justify-content-center">
@@ -57,10 +51,10 @@
               </div>
         <div class="row d-flex justify-content-center mb-3">
           {% if user.userprofileinfo.user_type == 'teacher' or user.is_superuser %}
-           <a href="{% url 'curriculum:lesson_create' standard=subjects.standard.slug slug=subjects.slug %}"><button type="button" class="btn btn-success btn-lg btn-bloc" > Add new Lesson </button> </a>
+           <a href="{% url 'curriculum:lesson_create' standard=subjects.standard.slug slug=subjects.slug %}"><button type="button" class="btn btn-success btn-lg btn-bloc" style="margin-bottom: 10px;" > Add new Lesson </button> </a>
           {% endif %}
         </div>
 
 </section>
-
+</div>
 {%endblock%}

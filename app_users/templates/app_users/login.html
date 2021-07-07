@@ -27,16 +27,9 @@
 {% endblock %}
 
 {% block content %}
-
-<section class="text-center mt-4" style="background-color: rgb(224, 250, 225);">
-              <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Login To Explore</h2>
-              <!-- class row for description-->
-              <div class="row d-flex justify-content-center mb-4">
-                <!-- class column -->
-                <div class="col-md-8">
-                  <p class="grey-text"></p>
-                </div>
-              </div>
+<div style="background-color: rgb(224, 250, 225);">
+<section class="text-center mt-4">
+              <h2 class="mb-5 font-weight-bold" style="color:#ff5722; padding-top:20px;">Login To Explore</h2>
               <div class="row d-flex justify-content-center mb-4">
                 <form action="{% url 'user_login' %}" method="post">
                   <div class="form-group">
@@ -57,4 +50,5 @@
                 </form>
               </div>
 </section>
+</div>
 {%endblock%}
