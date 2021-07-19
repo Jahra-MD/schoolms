@@ -40,6 +40,7 @@ Register
                 {%else%}
                 <form method="post" enctype="multipart/form-data" style="margin-left: 80px; margin-right:250px;">
                   {% csrf_token %}
+                  {{form|crispy}}
                   <input type="hidden" name="csrfmiddlewaretoken" value="lzySw098EgeKI63VSRKQ7iCVMiCO9fUUJqjbAufWsYn9KHvLzdcXDjRVeEmgQpsN">
                   
 <div id="div_id_username" class="form-group">

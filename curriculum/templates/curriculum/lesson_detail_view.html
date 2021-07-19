@@ -2,16 +2,19 @@
 
 {% load crispy_forms_tags %}
 {% block content %}
-<p>Created on {{lessons.created_at}} by {{lessons.created_by}}</p>
- <a href="{% url 'curriculum:lesson_update' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}">Update lesson</a>
-<a href="{% url 'curriculum:lesson_delete' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}">Delete lesson</a>
+<div style="margin-left:14px;">
+<p><strong>Created on {{lessons.created_at}} by {{lessons.created_by}}</strong></p>
+ <a href="{% url 'curriculum:lesson_update' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}"><button type="button" class="btn btn-success btn-lg btn-bloc" style="margin-bottom: 10px; margin-left:165px;">update lesson </button>
+ </a>
+<a href="{% url 'curriculum:lesson_delete' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}"><button type="button" class="btn btn-success btn-lg btn-bloc" style="margin-bottom: 10px;margin-left:185px;">Delete lesson </button>
+</a>
 
 <h4>post your comment or question below:</h4>
  <form method="post">
-  <div class="form-group">
+  <div class="form-group" style="margin-right: 670px;" >
     {% csrf_token %}
     {{form|crispy}}
-   <input type="submit" name="form" value="Add comment" class="btn btn-primary btn-sm">
+   <input type="submit" name="form" value="Add comment" class="btn btn-primary btn-sm" style="margin-top: 10px;">
     </div>
     </form>
 
@@ -30,6 +33,7 @@
        {{form2|crispy}}
        <input type="submit" name="form2" value="Add reply" class="btn btn-warning btn-sm">
    </form>
+</div>
 {% endfor %}
 
 {% endblock %}
