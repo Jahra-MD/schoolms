@@ -27,23 +27,23 @@
 {% endblock %}
 
 {% block content %}
-<div style="background-color: rgb(224, 250, 225);">
+<div style=" background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg');">
 <section class="text-center mt-4">
-              <h2 class="mb-5 font-weight-bold" style="color:#ff5722; padding-top:20px;">Login To Explore</h2>
+              <h2 class="mb-5 font-weight-bold" style="color:#e21c1c; padding-top:20px;">Login To Explore</h2>
               <div class="row d-flex justify-content-center mb-4">
                 <form action="{% url 'user_login' %}" method="post">
                   <div class="form-group">
                   {% csrf_token %}
                   <div class="col-md-12">
                     <div class="row">
-                  <label for="username"><strong>Username</strong></label>
-                  <input type="text" name="username" placeholder="Username" class="form-control" style="margin-left:40%; width:326px">
+                  <label for="username" style="color: white;"><strong>Username</strong></label>
+                  <input type="text" name="username" placeholder="Username" class="form-control" style="margin-left:38%; width:326px">
 
-                  <label for="password"> <strong>Password</strong></label>
-                  <input type="password" name="password"  placeholder="password" class="form-control" style="margin-left:40%; width:326px">
+                  <label for="password" style="color: white;"> <strong>Password</strong></label>
+                  <input type="password" name="password"  placeholder="password" class="form-control" style="margin-left:38%; width:326px">
                   </div>
                   <div class="row justify-content-center">
-                      <input type="submit" value="Login" class="btn btn-success btn-lg mt-3" style="margin-left:4.5%; width:200px; margin-bottom: 20px;">
+                      <input type="submit" value="Login" class="btn btn-success btn-lg mt-3" style="margin-left:4.%; width:200px; margin-bottom: 20px;">
                   </div>
                   </div>
                   </div>

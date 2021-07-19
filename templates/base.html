@@ -37,6 +37,9 @@
                       <li class="nav-item ">
                          <a class="nav-link" href="{% url 'admin:index' %}" style="color:#f53f08;"><strong>Admin</strong></span> </a>
                       </li>
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="{% url 'CCA' %}" style="color:#f53f08;"><strong>CCARegister</strong></a>
+                       </li>
                       {%endif%}
                       {% if user.is_authenticated %}
                       <li class="nav-item  ">
