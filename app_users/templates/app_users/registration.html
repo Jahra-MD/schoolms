@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block title %}
-Register
-{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block image_block %}
 <header class="info-header">
@@ -11,7 +9,7 @@ Register
     <div class="row d-flex justify-content-center text-center">
       <div class="col-md-10 text-white">
         <!-- heading -->
-        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > Login </h2>
+        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > Registration </h2>
         <div class="row d-flex justify-content-center text-center">
           <ul class="breadcrumb">
             <li><a href="{% url 'index' %}">Home</a></li>
@@ -21,95 +19,33 @@ Register
 
         <!-- divider -->
         <hr style="color:#ff5722;">
-
-        <!-- description -->
-        <h4 class="white-text my-4"></h4>
   </div>
 </header>
 {% endblock %}
 
+
 {% block content %}
-<div style=" background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg');">
-<div>
+<div style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg');">
 <section class="text-center mt-4">
-              <h2 class="mb-5 font-weight-bold" style="color:#e21c1c; padding-top:20px;">Sign up Now!!</h2>
+              <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Registration</h2>
+             
 </section>
-              
-                {% if registered %}
-                <h1>Thanks for registering</h1>
-                {%else%}
-                <form method="post" enctype="multipart/form-data" style="margin-left: 80px; margin-right:250px;">
-                  {% csrf_token %}
-                  {{form|crispy}}
-                  <input type="hidden" name="csrfmiddlewaretoken" value="lzySw098EgeKI63VSRKQ7iCVMiCO9fUUJqjbAufWsYn9KHvLzdcXDjRVeEmgQpsN">
-                  
-<div id="div_id_username" class="form-group">
-   <label for="id_username" class=" requiredField" style="color: white;">
-                <strong>Username</strong><span class="asteriskField">*</span>
-               </label>
-                <div class="">
-                   <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_username"> <small id="hint_id_username" 
-                   class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small> 
-                  </div> 
-                </div> 
-                <div id="div_id_first_name" class="form-group"> <label for="id_first_name" class="" style="color: white;">
-                <strong>First Name</strong>
-            </label> 
-            <div class=""> 
-              <input type="text" name="first_name" maxlength="150" class="textinput textInput form-control" id="id_first_name"> 
-            </div> 
-          </div>
-           <div id="div_id_last_name" class="form-group"> <label for="id_last_name" class="" style="color: white;">
-              <strong>Last name</strong>
-            </label> 
-            <div class=""> <input type="text" name="last_name" maxlength="150" class="textinput textInput form-control" id="id_last_name"> </div>
-           </div> 
-           <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField" style="color: white;">
-                <strong>Email</strong><span class="asteriskField">*</span> </label> 
-                <div class=""> <input type="email" name="email" class="emailinput form-control" required="" id="id_email">
-                 </div> 
-                </div> 
-                <div id="div_id_password1" class="form-group">
-                  
-                  <label for="id_password1" class=" requiredField" style="color: white;">
-                <strong>Password</strong><span class="asteriskField">*</span> </label> 
-                <div class=""> <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password1"> <small id="hint_id_password1" class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField" style="color: white;">
-                  <strong>Confirm Password</strong><span class="asteriskField">*</span> 
-              </label> <div class=""> 
-                <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password2"> 
-                <small id="hint_id_password2" class="form-text text-muted">Enter the same password as before, for verification.</small>
-               </div>
-               </div>
-
-                  
-
-<div id="div_id_bio" class="form-group"> <label for="id_bio" class="" style="color: white;">
-                <strong>Bio</strong>
-            </label>
-             <div class=""> <input type="text" name="bio" class="textinput textInput form-control" id="id_bio"> 
-            </div>
-           </div> 
-           <div id="div_id_profile_pic" class="form-group"> <label for="id_profile_pic" class="" style="color: white;">
-            <strong>Profile picture</strong>
-            </label>
-             <div class=""> 
-               <input type="file" name="profile_pic" accept="image/*" class="clearablefileinput form-control-file" id="id_profile_pic">
-               </div>
-               </div>
-                <div id="div_id_user_type" class="form-group"> <label for="id_user_type" class=" requiredField" style="color: white;">
-                <strong>User type</strong><span class="asteriskField">*</span> </label> <div class=""> <select name="user_type" class="select form-control" id="id_user_type"> <option value="student">student</option> <option value="parent">parent</option>
-
-</select> 
-</div>
- </div>
-
-                  <div class="row d-flex justify-content-center"  style="padding-top: 20px;">
-                     <div class="col-md-6">
-                     <input type="submit" value="Register" class="btn btn-primary btn-block">
-                   </div>
-                  </div>
-            </form>
-          </div>
-
-            {% endif %}        
-          {%endblock%}
+  {% if registered %}
+    <h1 style="color: white;">Thank you for registering</h1>
+  {% else %}
+  <div style="margin-left:30px; margin-right:500px;">
+      <h3 style="color: white;">Fill the form: </h3>
+      <form method="post" enctype="multipart/form-data"  style="color: white;">
+        {% csrf_token %}
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+        <input type="submit" value="Register" class="btn btn-primary btn-block" style="margin-top: 10px;">
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+{%endblock%}
